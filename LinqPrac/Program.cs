@@ -22,6 +22,16 @@ namespace LinqPrac
             {
                 Console.WriteLine(i);
             }
+            var output2 = from item in input
+                          where item % 2 == 0
+                          orderby item descending
+                          select item * item;
+            foreach (var i in output2)
+            {
+                Console.WriteLine(i);
+            }
+            output = output2.ToList<int>();
+            int[] output3 = output2.ToArray<int>();
         }
     }
 }
